@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Motorcycle - Lox Turbo Slugs</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">Lox Turbo Slugs</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="dealers.html">Dealers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Purchase Your Motorcycle</h1>
+
+            <form id="purchaseForm">
+                <label for="model">Choose your model:</label><br>
+                <select name="model" id="model">
+                    <option value="Storm Fang">Storm Fang</option>
+                    <option value="Iron Viper">Iron Viper</option>
+                    <option value="Crimson Talon">Crimson Talon</option>
+                    <option value="Nyxblade One">Nyxblade One</option>
+                    <option value="Nyxblade Two">Nyxblade Two</option>
+                    <option value="Helmet">Helmet</option>
+                    <option value="Gloves">Gloves</option>
+                    <option value="Jacket">Jacket</option>
+                    <option value="Leg armor">Leg armor</option>
+                </select><br><br>
+
+                <label for="name">Your Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Your Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <input type="submit" value="Buy Now">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Lox Turbo Slugs</p>
+        <p><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('purchaseForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your purchase!');
+            this.reset();
+        });
+    </script>
+
+</body>
+
+</html>
