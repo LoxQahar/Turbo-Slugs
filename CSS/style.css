@@ -14,6 +14,7 @@ header {
 	flex-direction: column;
 	background-color: #1b1f2b;
 	color: #fff;
+	position: relative;
 }
 
 .logo {
@@ -23,6 +24,25 @@ header {
 	letter-spacing: 1px;
 }
 
+.menu-toggle {
+	display: none;
+	font-size: 2rem;
+	cursor: pointer;
+	position: absolute;
+	right: 2rem;
+	top: 1.5rem;
+	z-index: 1001; /* Always clickable */
+}
+
+header nav {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	text-align: center;
+	transition: max-height 0.3s ease, opacity 0.3s ease;
+	overflow: hidden;
+}
+
 header nav ul {
 	margin-top: 0.5rem;
 	padding: 0;
@@ -30,7 +50,6 @@ header nav ul {
 	flex-direction: column;
 	gap: 0.5rem;
 	list-style: none;
-	text-align: center;
 }
 
 header nav a {
@@ -90,7 +109,6 @@ main > aside {
 	background-color: #1b1f2b;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 	cursor: pointer;
-
 }
 
 .motorcycle-card:hover .motorcycle-info,
@@ -99,7 +117,6 @@ main > aside {
 .motorcycle-card:hover .motorcycle-info a {
 	color: white;
 }
-
 
 .motorcycle-card > img {
 	width: 100%;
@@ -134,11 +151,10 @@ main > aside {
 
 .motorcycle-info a:hover {
 	text-decoration: underline;
-	
 }
 
 aside {
-	border-left:none;
+	border-left: none;
 }
 
 footer {
@@ -170,12 +186,45 @@ a:hover {
 	text-decoration: none;
 }
 
+/* Responsive hamburger menu */
+@media screen and (max-width: 768px) {
+	.menu-toggle {
+		display: block;
+	}
+
+	header nav {
+		max-height: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	#nav-menu.active {
+		max-height: 500px; /* Enough height for menu items */
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.product-list {
+		flex-direction: column;
+	}
+
+	footer {
+		flex-direction: column;
+	}
+}
 
 @media screen and (min-width: 768px) {
 	header {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+	}
+
+	header nav {
+		max-height: none;
+		opacity: 1;
+		visibility: visible;
+		display: flex;
 	}
 
 	header nav ul {
@@ -191,15 +240,15 @@ a:hover {
 	.motorcycle-card {
 		width: 18rem;
 		flex: 0 1 calc(33.333% - 2rem);
-		width: 18rem;
 	}
-	
+
 	footer {
 		flex-direction: row;
 		justify-content: space-evenly;
 	}
-    main > aside {
-	border: none;
+
+	main > aside {
+		border: none;
 	}
 }
 
@@ -217,6 +266,6 @@ a:hover {
 	main > aside {
 		grid-row: 1 / 2;
 		grid-column: 2 / 3;
-        border: none;
+		border: none;
 	}
 }

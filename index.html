@@ -4,16 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lox Turbo Slugs</title>
+    <title>Turbo Slugs</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <div class="logo">Lox Turbo Slugs</div>
+        <div class="logo">Turbo Slugs</div>
 
-        <nav>
+        <div class="menu-toggle" id="menu-toggle">
+            &#9776;
+        </div>
+
+        <nav id="nav-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="accessories.html">Accessories</a></li>
@@ -34,7 +38,7 @@
                         <p><strong>Click for more information</strong></p>
                     </div>
                 </a>
-                
+
                 <a href="IronViper.html" class="motorcycle-card">
                     <img src="media/Iron Viper.png" alt="Iron Viper">
                     <div class="motorcycle-info">
@@ -43,7 +47,7 @@
                         <p><strong>Click for more information</strong></p>
                     </div>
                 </a>
-                
+
                 <a href="CrimsonTalon.html" class="motorcycle-card">
                     <img src="media/Crimson Talon.png" alt="Crimson Talon">
                     <div class="motorcycle-info">
@@ -52,7 +56,7 @@
                         <p><strong>Click for more information</strong></p>
                     </div>
                 </a>
-                
+
                 <a href="NyxbladeOne.html" class="motorcycle-card">
                     <img src="media/Nyxblade One.png" alt="Nyxblade One">
                     <div class="motorcycle-info">
@@ -61,7 +65,7 @@
                         <p><strong>Click for more information</strong></p>
                     </div>
                 </a>
-                
+
                 <a href="NyxbladeTwo.html" class="motorcycle-card">
                     <img src="media/Nyxblade Two.png" alt="Nyxblade Two">
                     <div class="motorcycle-info">
@@ -70,18 +74,13 @@
                         <p><strong>Click for more information</strong></p>
                     </div>
                 </a>
-                
-
-
             </div>
         </section>
 
         <aside>
             <h2>About Us</h2>
-            <p>Welcome to Lox Turbo Slugs where speed, precision, and bold design collide. We specialize in crafting high performance motorcycles for riders who crave something extraordinary. Each of our models is built with passion, tested for performance, and designed to turn heads.</p>
-        
-            <p>Our team is made up of engineers, artists, and thrill-seekers who believe motorcycles are more than machines they're freedom on wheels. From city streets to open highways, Lox Turbo Slugs delivers unmatched quality and unforgettable experiences.</p>
-        
+            <p>Welcome to Lox Turbo Slugs where speed, precision, and bold design collide. We specialize in crafting high performance motorcycles for riders who crave something extraordinary...</p>
+            
             <h3>Contact Us</h3>
             <ul>
                 <li>Email: <a href="mailto:info@loxturboslugs.com">info@loxturboslugs.com</a></li>
@@ -90,13 +89,21 @@
                 <li>Address: Sector 5, Cloud Cruiser Base, Jupiter</li>
             </ul>
         </aside>
-        
     </main>
 
     <footer>
         <p>&copy; 2025 Lox Turbo Slugs</p>
         <p><a href="privacy.html">Privacy Policy</a></p>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
